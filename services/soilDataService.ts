@@ -33,3 +33,4 @@ export const fetchSoilData = async (): Promise<SoilData> => {
     throw error;
   }
 }; 
+

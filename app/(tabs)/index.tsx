@@ -40,7 +40,7 @@ export default function SoilStats() {
     if (success) {
       const interval = setInterval(async () => {
         await loadData();
-      }, 30000);
+      }, 300000);
       return () => clearInterval(interval);
     }
   };
@@ -59,7 +59,7 @@ export default function SoilStats() {
       if (success) {
         interval = setInterval(async () => {
           await loadData();
-        }, 30000);
+        }, 300000);
       }
     };
 
@@ -157,9 +157,9 @@ export default function SoilStats() {
         <Text style={styles.subtitle}>Current Readings</Text>
       </View>
       <View style={styles.mainCard}>
-        <Text style={styles.cardLabel}>Predicted Carbon Content</Text>
-        <Text style={styles.carbonValue}>{soilData.carbonContent}%</Text>
-        <Text style={styles.cardSubtext}>Optimal Range: 3.0-5.0%</Text>
+        <Text style={styles.cardLabel}>Predicted Organic Carbon Content</Text>
+        <Text style={styles.carbonValue}>{soilData.carbonContent}</Text>
+        <Text style={styles.cardSubtext}>g/kg</Text>
       </View>
 
       <View style={styles.statsGrid}>
@@ -172,7 +172,7 @@ export default function SoilStats() {
         <View style={styles.statCard}>
           <Text style={styles.statLabel}>Electrical Conductivity</Text>
           <Text style={styles.statValue}>{soilData.electricalConductivity}</Text>
-          <Text style={styles.statUnit}>μS/cm</Text>
+          <Text style={styles.statUnit}>mS/m</Text>
         </View>
 
         <View style={styles.statCard}>
@@ -184,7 +184,7 @@ export default function SoilStats() {
         <View style={styles.statCard}>
           <Text style={styles.statLabel}>Nitrogen</Text>
           <Text style={styles.statValue}>{soilData.nitrogen}</Text>
-          <Text style={styles.statUnit}>mg/kg</Text>
+          <Text style={styles.statUnit}>g/kg</Text>
         </View>
 
         <View style={styles.statCard}>
